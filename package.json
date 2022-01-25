@@ -1,0 +1,33 @@
+{
+  "name": "stylelint-sass",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/variables.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/variables.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "stylelint **/*.css"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vordgi/stylelint-themeizer.git"
+  },
+  "author": {
+    "name": "Savelyev Alexander",
+    "email": "vordgi1@gmail.com",
+    "url": "https://github.com/vordgi/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "stylelint": "14.3.0",
+    "themeizer-cli": "0.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.12",
+    "typescript": "4.5.5"
+  }
+}
