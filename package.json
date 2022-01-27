@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-sass",
+  "name": "stylelint-themeizer",
   "version": "0.0.1",
   "description": "",
   "main": "dist/variables.js",

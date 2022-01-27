@@ -29,9 +29,9 @@ module.exports = stylelint.createPlugin(ruleName, function ruleFunction(primaryO
     return async function lint(postcssRoot, postcssResult: any) {
         if (postcssRoot.type !== 'root' || !postcssRoot.source) return;
         const { data } = await Worker;
-        
+
         const colorsSorted = getSortedThemeColors(data, lookedTheme);
-        
+
         postcssRoot.walkDecls((deckl) => {
             const { value } = deckl;
             colorsSorted.forEach((color) => {
