@@ -11,7 +11,12 @@
     "build": "tsc",
     "test": "stylelint **/*.css"
   },
-  "keywords": [],
+  "keywords": [
+    "stylelint-plugin",
+    "themeizer",
+    "theming",
+    "css-variables"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/vordgi/stylelint-themeizer.git"
