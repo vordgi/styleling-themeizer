@@ -8,7 +8,7 @@ const { report, ruleMessages } = stylelint.utils;
 
 const ruleName = 'themeizer/variables';
 const messages = ruleMessages(ruleName, {
-    expected: (unfixed, fixed) => `Expected indentation of "${fixed}" spaces but got "${unfixed}"`,
+    expected: (unfixed, fixed) => `The color from property "${unfixed}" exists as a variable, you can change it to "${fixed}"`,
 });
 
 module.exports.ruleName = ruleName;
@@ -38,14 +38,14 @@ module.exports = stylelint.createPlugin(ruleName, function ruleFunction(primaryO
                 const {replaceTo, regex} = getReplacerData(color);
                 if (!value.match(regex)) return;
 
-                const variableName = value.replace(regex, replaceTo);
+                const newValue = value.replace(regex, replaceTo);
                 if (isAutoFixing) {
-                    deckl.value = variableName;
+                    deckl.value = newValue;
                 } else {
                     report({
                         ruleName,
                         result: postcssResult,
-                        message: `"${value}" exists as variable, You could change it to "${variableName}"`,
+                        message: messages.expected(value, newValue),
                         node: deckl,
                         word: value,
                     });
