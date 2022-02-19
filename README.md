@@ -38,7 +38,7 @@ _.stylelintrc.json_
 			"revalidate": 0.5,
 			"lookedTheme": "default-theme-name",
 			"headers": {
-        "key": "value"
+				"key": "value"
 			},
 			"autoFix": true
 		}
