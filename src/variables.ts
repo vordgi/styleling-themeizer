@@ -20,12 +20,14 @@ module.exports = stylelint.createPlugin(ruleName, function ruleFunction(primaryO
     if (typeof primaryOption.url !== 'string' || typeof primaryOption.revalidate !== 'number' || typeof primaryOption.lookedTheme !== 'string') {
         throw new Error('Error: Invalid options  themeizer/variables')
     };
-    const {lookedTheme, ...options} = primaryOption;
-    new ThemeizerPlugin(options);
+    const {lookedTheme, autoFix = true, ...options} = primaryOption;
+
     if (!Worker) {
         Worker = ThemeizerWorker.init(options)
     }
-    const isAutoFixing = Boolean(context.fix);
+
+    const isAutoFixing = Boolean(context.fix) && autoFix;
+
     return async function lint(postcssRoot, postcssResult: any) {
         if (postcssRoot.type !== 'root' || !postcssRoot.source) return;
         const { data } = await Worker;
