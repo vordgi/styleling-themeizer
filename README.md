@@ -32,16 +32,16 @@ _.stylelintrc.json_
 	"plugins": [
 		"stylelint-themeizer"
 	],
-    "rules": {
+	"rules": {
 		"themeizer/variables": {
-            "url": "https://example.com/api/themes/",
-            "revalidate": 0.5,
+			"url": "https://example.com/api/themes/",
+			"revalidate": 0.5,
 			"lookedTheme": "default-theme-name",
-            "headers": {
-                "key": "value"
-            },
+			"headers": {
+        "key": "value"
+			},
 			"autoFix": true
-        }
+		}
 	}
 }
 ```
